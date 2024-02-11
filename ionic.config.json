@@ -1,0 +1,7 @@
+{
+  "name": "af-compat-things",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
