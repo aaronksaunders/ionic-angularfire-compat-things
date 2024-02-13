@@ -1,0 +1,30 @@
+<p>
+  <ion-card *ngFor="let item of things | async; ; let i = index">
+    <ion-card-header>
+      <ion-card-title> {{ item.name }} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ item.description }}</p>
+    </ion-card-content>
+    <div>
+      <ion-button
+        (click)="delete.emit(item.id)"
+        fill="clear"
+        color="danger"
+        class="ion-float-right"
+        style="transform: scale(1.25);"
+      >
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button
+        (click)="edit.emit(item.id)"
+        fill="clear"
+        color="primary" 
+        class="ion-float-right"
+        style="transform: scale(1.25);"
+        >
+      <ion-icon name="create" slot="icon-only"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-card>
+</p>

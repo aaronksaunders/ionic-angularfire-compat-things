@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="handleCancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>{{ modalType === 'add' ? "Create New Thing": "Update Thing"}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="handleConfirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input
+      label="Enter Name"
+      labelPlacement="stacked"
+      type="text"
+      placeholder="Name of Thing"
+      [(ngModel)]="modalData.name"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea
+      label="Enter Description"
+      labelPlacement="stacked"
+      rows="6"
+      placeholder="Description of Thing"
+      [(ngModel)]="modalData.description"
+    ></ion-textarea>
+  </ion-item>
+
+  <ng-container *ngIf="modalData?.id">
+    <ion-item>
+      <ion-label style="opacity: .5;">UID: {{ modalData?.id }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label  style="opacity: .5;"
+        >Created: {{ modalData?.created?.toDate().toLocaleDateString() }}
+        {{ modalData?.created?.toDate().toLocaleTimeString() }}</ion-label
+      >
+    </ion-item>
+    <ion-item>
+      <ion-label  style="opacity: .5;" 
+        >Updated: {{ modalData?.updated?.toDate().toLocaleDateString() }}
+        {{ modalData?.created?.toDate().toLocaleTimeString() }}</ion-label
+      >
+    </ion-item>
+  </ng-container>
+</ion-content>
