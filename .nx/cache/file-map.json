@@ -68,7 +68,7 @@
       },
       {
         "file": ".gitignore",
-        "hash": "91109559695469517"
+        "hash": "7166112055282593472"
       },
       {
         "file": ".vscode/extensions.json",
@@ -184,7 +184,7 @@
       },
       {
         "file": "src/app/home/home.page.ts",
-        "hash": "11548893951807024087"
+        "hash": "13527417678793408593"
       },
       {
         "file": "src/app/services/things.model.ts",
@@ -196,7 +196,7 @@
       },
       {
         "file": "src/app/services/things.service.ts",
-        "hash": "5238563876333108994"
+        "hash": "14846103969430977965"
       },
       {
         "file": "src/assets/icon/favicon.png",
@@ -209,10 +209,6 @@
       {
         "file": "src/environments/environment.prod.ts",
         "hash": "5406836414239361753"
-      },
-      {
-        "file": "src/environments/environment.ts",
-        "hash": "8747303585284995981"
       },
       {
         "file": "src/global.scss",

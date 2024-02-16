@@ -1,15 +1,62 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { IonModal, ModalController } from '@ionic/angular';
+import {
+  IonModal,
+  ModalController,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButton,
+  IonButtons,
+  IonCard,
+  IonCardContent,
+  IonItem,
+  IonLabel,
+  IonInput,
+  IonIcon,
+  IonCardTitle,
+  IonCardHeader,
+  IonSpinner
+} from '@ionic/angular/standalone';
 import { ThingModalComponent } from '../components/thing-modal/thing-modal.component';
 import { ThingsService } from '../services/things.service';
 import { ThingCreateInput, ThingEditInput } from '../services/things.model';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ThingListComponent } from '../components/thing-list/thing-list.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule, NgIf } from '@angular/common';
+import {  addCircle } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
+addIcons({ addCircle});
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    NgIf,
+    FormsModule,
+    ThingListComponent,
+    // IONIC
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonModal,
+    IonButton,
+    IonButtons,
+    IonCard,
+    IonCardContent,
+    IonCardTitle,
+    IonItem,
+    IonLabel,
+    IonInput,
+    IonIcon,
+    IonCardHeader,
+    IonSpinner,
+  ],
 })
 export class HomePage implements OnInit {
   @ViewChild(IonModal) addThingModal: IonModal = undefined!;

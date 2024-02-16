@@ -1,10 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, IonicModule } from '@ionic/angular';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-thing-modal',
-  templateUrl: './thing-modal.component.html',
-  styleUrls: ['./thing-modal.component.scss'],
+    selector: 'app-thing-modal',
+    templateUrl: './thing-modal.component.html',
+    styleUrls: ['./thing-modal.component.scss'],
+    standalone: true,
+    imports: [
+        IonicModule,
+        FormsModule,
+        NgIf,
+    ],
 })
 export class ThingModalComponent implements OnInit {
   @Input() data: any;
